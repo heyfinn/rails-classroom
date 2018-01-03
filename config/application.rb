@@ -18,8 +18,10 @@ module Myapp
     # CORS issue
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins '*'
-        resource '*', :headers => :any, :methods => [:get, :post, :options]
+        origins 'localhost:8081','127.0.0.1:8081', 'http://localhost:8081', 'http://localhost:8080', 'http://127.0.0.1:8081', 'http://127.0.0.1:8080'
+        resource '*', :header => :any, :methods => :any
+        # origins '*'
+        # resource '*', :headers => :any, :methods => [:get, :post, :options]
       end
     end
   end
