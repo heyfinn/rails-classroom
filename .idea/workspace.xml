@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ad019b6-c02f-401a-a84b-09feba69d4cd" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/config.ru" afterPath="$PROJECT_DIR$/config.ru" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
@@ -62,8 +63,8 @@
       <file leaf-file-name="config.ru" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config.ru">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="11" column="24" lean-forward="false" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+            <state relative-caret-position="240">
+              <caret line="10" column="185" lean-forward="false" selection-start-line="10" selection-start-column="185" selection-end-line="10" selection-end-column="185" />
               <folding />
             </state>
           </provider>
@@ -111,6 +112,7 @@
       <find>bundle</find>
       <find>ruby</find>
       <find>.DS_Store</find>
+      <find>http://localhost:8081</find>
     </findStrings>
     <replaceStrings>
       <replace>student</replace>
@@ -365,12 +367,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1514895149897</updated>
-      <workItem from="1514895151044" duration="14595000" />
+      <workItem from="1514895151044" duration="14739000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14595000" />
+    <option name="totallyTimeSpent" value="14739000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -514,8 +516,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config.ru">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="11" column="24" lean-forward="false" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+        <state relative-caret-position="240">
+          <caret line="10" column="185" lean-forward="false" selection-start-line="10" selection-start-column="185" selection-end-line="10" selection-end-column="185" />
           <folding />
         </state>
       </provider>
