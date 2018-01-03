@@ -3,29 +3,4 @@
 require_relative 'config/environment'
 
 run Rails.application
-
-use Rack::Cors do
-  allow do
-    #下面可以透過正則表示法去設定在開發時可能會用到的 domain name
-
-    origins 'localhost:8081','127.0.0.1:8081', 'http://localhost:8081', 'http://localhost:8080', 'http://127.0.0.1:8081', 'http://127.0.0.1:8080'
-    resource '*', :header => :any, :methods => :any
-    # /http:\/\/192\.168\.0\.\d{1,3}(:\d+)?/
-    # regular expressions can be used here
-
-
-    resource '/file/list_all/', :headers => 'x-domain-token'
-    resource '/file/at/*',
-             :methods => [:get, :post, :put, :delete, :options],
-             :headers => 'x-domain-token',
-             :expose  => ['Some-Custom-Response-Header'],
-             :max_age => 600
-    # headers to expose
-
-  end
-
-  allow do
-    origins '*'
-    resource '/public/*', :headers => :any, :methods => :get
-  end
-end
+ㄈ
