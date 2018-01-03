@@ -6,7 +6,7 @@ class Student < ApplicationRecord
 
   validates :last_name, :presence => true,
                         :length => { :minimum => 1, :maximum => 20 }
-  
+
   validates :email, :presence => true,
                     :length => { :minimum => 5, :maximum => 254 },
                     :uniqueness => true
