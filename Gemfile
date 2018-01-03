@@ -53,3 +53,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'validates_email_format_of'
+gem 'rack-cors', :require => 'rack/cors'
