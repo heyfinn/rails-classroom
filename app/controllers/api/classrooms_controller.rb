@@ -22,7 +22,7 @@ class Api::ClassroomsController < ApiController
   end
 
   def show
-    @students = Student.find_by(class_id: params[:id])
+    @students = Student.where(:class_id => params[:id])
 
     begin
       @classroom = Classroom.find(params[:id])
