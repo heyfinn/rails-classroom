@@ -43,11 +43,23 @@ class Api::StudentsController < ApiController
     end
 
     # Update if data provided
-    _student = {}
-    params[:first_name] && _student.first_name = params[:first_name]
-    params[:last_name] && _student.first_name = params[:last_name]
-    params[:class_id] && _student.first_name = params[:class_id]
-    params[:email] && _student.first_name = params[:email]
+    _student = Hash.new
+    if (params[:first_name])
+      _student["first_name"] = params[:first_name]
+    end
+    if (params[:last_name])
+      _student["last_name"] = params[:last_name]
+    end
+    if (params[:class_id])
+      _student["class_id"] = params[:class_id]
+    end
+    if (params[:email])
+      _student["email"] = params[:email]
+    end
+    # params[:first_name] && (_student.first_name = params[:first_name])
+    # params[:last_name] && (_student.last_name = params[:last_name])
+    # params[:class_id] && (_student.class_id = params[:class_id])
+    # params[:email] && (_student.email = params[:email])
 
     # Save student
     if student.update(_student)
