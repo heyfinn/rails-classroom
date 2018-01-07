@@ -7,16 +7,17 @@ class Api::ClassroomsController < ApiController
   end
 
   def create
-    @classrooms = Classroom.new
-    @classrooms.name = params[:name]
+    @classroom = Classroom.new
+    @classroom.name = params[:name]
 
-    if @classrooms.save
+    if @classroom.save
       render status: 200, json: {
+          class_id: @classroom.id,
           message: 'Successfully create a classroom!'
       }
     else
       render status: 500, json: {
-          errors: @classrooms.errors
+          errors: @classroom.errors
       }
     end
   end
