@@ -1,8 +1,8 @@
 class Api::StudentsController < ApiController
   def index
-    student = Student.all
+    @students = Student.all
     render json: {
-        data: student
+        data: @students
     }
   end
 

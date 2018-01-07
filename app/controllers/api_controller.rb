@@ -1,7 +1,7 @@
 class ApiController < ActionController::Base
   def index
     render json: {
-        test: 'gg'
+        message: 'welcome'
     }
   end
 end
