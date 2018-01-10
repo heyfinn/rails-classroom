@@ -1,9 +1,9 @@
 class Api::ClassroomsController < ApiController
   def index
     @classrooms = Classroom.all
-    render status: 200, json: {
+    render json: {
         data: @classrooms
-    }
+    }, status: 200
   end
 
   def create
@@ -11,14 +11,14 @@ class Api::ClassroomsController < ApiController
     @classroom.name = params[:name]
 
     if @classroom.save
-      render status: 200, json: {
+      render json: {
           class_id: @classroom.id,
           message: 'Successfully create a classroom!'
-      }
+      }, status: 201
     else
-      render status: 500, json: {
+      render json: {
           errors: @classroom.errors
-      }
+      }, status: 500
     end
   end
 
@@ -29,10 +29,9 @@ class Api::ClassroomsController < ApiController
       @classroom = Classroom.find(params[:id])
     rescue ActiveRecord::RecordNotFound => e
       render json: {
-          status: 400,
           message: "Find no classroom with id #{params[:id]}",
           errors: e.to_s
-      }
+      }, status: 404
 
       return
     end
@@ -59,7 +58,7 @@ class Api::ClassroomsController < ApiController
 
     @classroom.name = params[:name]
 
-    if (@classroom.save)
+    if @classroom.save
       render json: {
           message: 'Successfully update classroom'
       }, status: 200

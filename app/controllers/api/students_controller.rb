@@ -3,7 +3,7 @@ class Api::StudentsController < ApiController
     @students = Student.all
     render json: {
         data: @students
-    }
+    }, status: 200
   end
 
   def create
@@ -17,15 +17,13 @@ class Api::StudentsController < ApiController
 
     if student.save
       render json: {
-          status: 200,
           data: student,
           message: 'Successfully created user ' + student.first_name
-      }.to_json
+      }, status: 201
     else
       render json: {
-          status: 500,
           errors: student.errors
-      }.to_json
+      }, status: 500
     end
   end
 
@@ -34,10 +32,9 @@ class Api::StudentsController < ApiController
       student = Student.find(params[:id])
     rescue ActiveRecord::RecordNotFound => e
       render json: {
-          status: 403,
           message: "Find no student with id #{params[:id]}",
           errors: e.to_s
-      }
+      }, status: 404
 
       return
     end
@@ -64,18 +61,41 @@ class Api::StudentsController < ApiController
     # Save student
     if student.update(_student)
       render json: {
-          status: 200,
           data: student
-      }.to_json
+      }, status: 204
     else
       render json: {
-        status: 500,
         errors: student.errors
-      }
+      }, status: 500
     end
   end
 
+  def show
+    @student = trySearchStudent(params[:id])
+
+    if @student
+      render json: {
+          data: @student
+      }, status: 200
+    end
+  end
+
+  def trySearchStudent(id)
+    begin
+      @student = Student.find(id)
+    rescue ActiveRecord::RecordNotFound => e
+      render json: {
+          message: "Find no student with id #{id}",
+          errors: e.to_s
+      }, status: 404
+
+      return
+    end
+
+    return @student
+  end
+
   def delete
-    student = Student.find
+    student = Student.find(params[:id])
   end
 end
