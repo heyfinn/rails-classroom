@@ -1,6 +1,6 @@
 class Api::ClassroomsController < ApiController
   def index
-    @classrooms = Classroom.all
+    @classrooms = Classroom.all.sort_by {|c| c.id}
     render json: {
         data: @classrooms
     }, status: 200
