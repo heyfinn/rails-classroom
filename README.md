@@ -1,24 +1,25 @@
-# README
+# Classroom
+A backend api server for [vue-classroom](https://github.com/heyfinn/vue-classroom).
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Requirement
+Ruby version >= 2.0.0
 
-Things you may want to cover:
+## Host
+```
+./bin/rails db:migrate
+./bin/rails s
+```
 
-* Ruby version
+## API Served
+### classroom
+GET `/api/classrooms` : load all classroom data
+GET `/api/classrooms/{classId}`: load students in clasasroom with `classId`
+PUT `/api/classrooms/{classId}`: update classroom data
 
-* System dependencies
+### student
+GET `/api/students`: load all students
+GET `/api/students/{studentId}`: load student data with `studentId`
+PUT `/api/students/{studentId}`: update student data
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### search
+GET `/api/search?keyword={keyword}`: search students and classrooms with `keyword` given
