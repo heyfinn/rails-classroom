@@ -1,5 +1,5 @@
 class CreateStudents < ActiveRecord::Migration[5.1]
-  belongs_to: classroom
+  belongs_to :classroom
   
   def change
     create_table :students do |t|
